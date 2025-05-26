@@ -16,18 +16,18 @@ img {
   display: block;
 }
 
-header nav {
+.header__nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 63px;
   background-color: white;
 }
-header nav img {
+.header__logo {
   height: 36px;
   width: auto;
 }
-header .return-button {
+.header__back {
   visibility: visible;
   position: absolute;
   left: 17px;
@@ -36,12 +36,12 @@ header .return-button {
   text-decoration: none;
 }
 
-.hero-img {
+.restaurant-hero {
   width: 100%;
   height: 275px;
   overflow: hidden;
 }
-.hero-img img {
+.restaurant-hero__image {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -59,26 +59,24 @@ header .return-button {
   position: relative;
   z-index: 1;
 }
-
-.restaurant-menu__title {
+.restaurant-menu__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.restaurant-menu__title h1 {
+.restaurant-menu__title {
   font-family: "Shrikhand", sans-serif;
   font-size: 28px;
   font-weight: normal;
 }
-.restaurant-menu__title i {
+.restaurant-menu__like-icone {
   font-size: 22px;
 }
-
-.menu-category {
+.restaurant-menu__category {
   margin-top: 40px;
 }
-.menu-category h2 {
+.restaurant-menu__category-title {
   font-size: 16px;
   font-weight: 300;
   text-transform: uppercase;
@@ -86,14 +84,13 @@ header .return-button {
   padding-bottom: 5px;
   width: 40px;
 }
-.menu-category .menu-items {
+.restaurant-menu__items {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 10px;
 }
-
-.menu-card {
+.restaurant-menu__card {
   background-color: white;
   border-radius: 15px;
   padding: 15px;
@@ -104,18 +101,18 @@ header .return-button {
   cursor: pointer;
   overflow: hidden;
 }
-.menu-card__text {
+.restaurant-menu__text {
   flex-grow: 1;
 }
-.menu-card__text h3 {
+.restaurant-menu__card-title {
   font-size: 18px;
   margin: 0;
 }
-.menu-card__text p {
+.restaurant-menu__card-desc {
   font-size: 15px;
   margin: 5px 0;
 }
-.menu-card .price {
+.restaurant-menu__card-price {
   font-size: 16px;
   font-weight: bold;
   margin-left: 15px;
@@ -136,7 +133,7 @@ header .return-button {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-footer {
+.footer {
   background-color: #353535;
   color: white;
   padding: 30px 20px;
@@ -144,28 +141,28 @@ footer {
   flex-direction: column;
   gap: 15px;
 }
-footer h2 {
+.footer__title {
   font-family: "Shrikhand", sans-serif;
   font-size: 18px;
   font-weight: normal;
 }
-footer ul {
+.footer__list {
   list-style: none;
   padding: 0;
 }
-footer ul li {
+.footer__item {
   margin: 8px 0;
   display: flex;
   align-items: center;
 }
-footer ul li a {
+.footer__link {
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-footer ul li i {
+.footer__icone {
   width: 20px;
 }
 

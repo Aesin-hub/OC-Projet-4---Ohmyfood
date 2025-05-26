@@ -16,7 +16,7 @@ img {
   display: block;
 }
 
-header nav {
+.header__nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +25,11 @@ header nav {
   margin-bottom: 4px;
   background-color: white;
 }
-header nav img {
+.header__logo {
   height: 36px;
   width: auto;
 }
-header .return-button {
+.header__back {
   visibility: hidden;
   position: absolute;
   left: 17px;
@@ -37,10 +37,10 @@ header .return-button {
   color: #353535;
   text-decoration: none;
 }
-header body.restaurant-page .return-button {
+body.restaurant-page .header__back {
   visibility: visible;
 }
-header div {
+.header__location {
   display: flex;
   justify-content: center;
   background-color: #EAEAEA;
@@ -48,8 +48,9 @@ header div {
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 4px;
+  gap: 10px;
 }
-header div i {
+.header__icon {
   margin-right: 17px;
 }
 
@@ -60,16 +61,16 @@ header div i {
   max-width: 400px;
   margin: auto;
 }
-.hero h1 {
+.hero__title {
   font-size: 24px;
   width: 63%;
   margin: 50px auto 30px;
 }
-.hero p {
+.hero__subtitle {
   font-size: 18px;
   margin-bottom: 30px;
 }
-.hero button {
+.hero__btn {
   width: 60%;
   font-weight: bold;
   color: white;
@@ -90,12 +91,13 @@ header div i {
   height: 440px;
   justify-content: center;
 }
-.fonction h2 {
+.fonction__title {
   font-size: 24px;
 }
-.fonction button {
+.fonction__btn {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 20px;
   height: 72px;
   background-color: #F6F6F6;
@@ -106,7 +108,7 @@ header div i {
   position: relative;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 }
-.fonction button p {
+.fonction__btn-number {
   position: absolute;
   left: -12px;
   top: 50%;
@@ -121,11 +123,14 @@ header div i {
   justify-content: center;
   align-items: center;
 }
-.fonction button i {
+.fonction__btn-label {
+  flex: 1;
+}
+.fonction__btn i {
   color: #353535;
   font-size: 18px;
 }
-.fonction button:last-of-type i {
+.fonction__btn:last-of-type i {
   color: #9356DC;
 }
 
@@ -133,50 +138,51 @@ header div i {
   padding: 30px 20px;
   background-color: #F6F6F6;
 }
-.restaurants h2 {
+.restaurants__title {
   font-size: 24px;
   margin-bottom: 20px;
 }
-.restaurants .restaurants__content {
+.restaurants__content {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.restaurants .card {
+
+.restaurant-card {
   text-decoration: none;
   color: inherit;
 }
-.restaurants .card .card__container {
+.restaurant-card__container {
   background-color: white;
   border-radius: 20px;
 }
-.restaurants .card .card__container .card__img-wrapper {
+.restaurant-card__img-wrapper {
   position: relative;
   height: 220px;
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.restaurants .card .card__container .card__img-wrapper img {
+.restaurant-card__img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
 }
-.restaurants .card .card__container .card__img-wrapper img.object-bottom {
+.restaurant-card__img--bottom {
   -o-object-position: bottom center;
      object-position: bottom center;
 }
-.restaurants .card .card__container .card__img-wrapper img.object-top {
+.restaurant-card__img--top {
   -o-object-position: top center;
      object-position: top center;
 }
-.restaurants .card .card__container .card__img-wrapper img.object-center {
+.restaurant-card__img--center {
   -o-object-position: center center;
      object-position: center center;
 }
-.restaurants .card .card__container .card__img-wrapper .badge {
+.restaurant-card__badge {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -186,29 +192,29 @@ header div i {
   padding: 6px 10px;
   border-radius: 3px;
 }
-.restaurants .card .card__container .card-content {
+.restaurant-card__content {
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.restaurants .card .card__container .card-content .card-txt {
+.restaurant-card__text {
   display: flex;
   flex-direction: column;
 }
-.restaurants .card .card__container .card-content .card-txt h3 {
+.restaurant-card__title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.restaurants .card .card__container .card-content .card-txt p {
+.restaurant-card__location {
   font-weight: 300;
 }
-.restaurants .card .card__container .card-content i {
+.restaurant-card__like-icon {
   font-size: 22px;
 }
 
-footer {
+.footer {
   background-color: #353535;
   color: white;
   padding: 30px 20px;
@@ -216,27 +222,27 @@ footer {
   flex-direction: column;
   gap: 15px;
 }
-footer h2 {
+.footer__title {
   font-family: "Shrikhand", sans-serif;
   font-size: 18px;
   font-weight: normal;
 }
-footer ul {
+.footer__list {
   list-style: none;
   padding: 0;
 }
-footer ul li {
+.footer__item {
   margin: 8px 0;
   display: flex;
   align-items: center;
 }
-footer ul li a {
+.footer__link {
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-footer ul li i {
+.footer__icone {
   width: 20px;
 }/*# sourceMappingURL=style.css.map */
