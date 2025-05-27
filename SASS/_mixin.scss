@@ -1,0 +1,47 @@
+@mixin heart-toggle {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    i {
+        font-size: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .fa-regular {
+        z-index: 2;
+        color: #000;
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.2s ease;
+    }
+
+    .fa-solid {
+        z-index: 1;
+        color: $main-color;
+        clip-path: inset(100% 0 0 0);
+        opacity: 1;
+        transition: clip-path 0.3s ease;
+    }
+
+    input:checked ~ .fa-regular {
+        opacity: 0;
+        transform: none;
+    }
+
+    input:checked ~ .fa-solid {
+        clip-path: inset(0 0 0 0);
+    }
+
+    input:not(:checked) ~ .fa-solid {
+        clip-path: inset(100% 0 0 0);
+    }
+}

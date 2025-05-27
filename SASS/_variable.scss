@@ -1,0 +1,13 @@
+// Color
+$main-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$light-grey: #F6F6F6;
+$dark-grey: #353535;
+$main-color-mixed: mix($main-color, $secondary-color, 25%);
+$main-color-mixed-light: mix(white, $main-color-mixed, 20%);
+$main-color-light: mix(white, $main-color, 20%);
+
+// Typo
+$font-title: 'Shrikhand', sans-serif;
+$font-stack: 'Roboto', sans-serif;
