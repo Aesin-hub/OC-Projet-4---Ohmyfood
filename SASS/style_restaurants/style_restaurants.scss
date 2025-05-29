@@ -1,19 +1,11 @@
+@import '../variable';
+@import '../mixin';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-// Variable
-$main-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$light-grey: #F6F6F6;
-$dark-grey: #353535;
-
-// Typo
-$font-title: 'Shrikhand', sans-serif;
-$font-stack: 'Roboto', sans-serif;
 
 body {
     font-family: $font-stack;
@@ -21,7 +13,6 @@ body {
     color: black;
     font-size: 16px;
 }
-
 
 img {
     width: 100%;
@@ -90,7 +81,9 @@ img {
     }
 
     &__like-icone {
-            font-size: 22px;
+        @include heart-toggle;
+        font-size: 22px;
+        margin-right: 1.2rem;
     }
     
     &__category {
@@ -124,44 +117,139 @@ img {
         align-items: center;
         cursor: pointer;
         overflow: hidden;
+        opacity: 0;
+        animation: slide-in-left 0.5s ease-out forwards;
+        padding-right: 20px;
+        gap: 12px;
+        transition: all 0.3s ease;
+        animation: slide-in-left 0.5s ease forwards;
+
+        &:nth-child(1) {animation-delay:0.2s;}
+        &:nth-child(2) {animation-delay:0.4s;}
+        &:nth-child(3) {animation-delay:0.6s;}
+        &:nth-child(4) {animation-delay:0.8s;}
+
+        input.restaurant-menu__card-checkbox:checked ~ .restaurant-menu__check {
+            transform: translateX(0);
+        }
+
+        input.restaurant-menu__card-checkbox:checked ~ .restaurant-menu__card-price {
+            transform: translateX(-59px);
+        }
     }
 
-    &__text {
-        flex-grow: 1;
+    &__card:has(input:checked) {
+        .restaurant-menu__card-text {
+            padding-right: 59px;
+        }
+    }
+
+    &__card-text {
+        flex: 1;
+        overflow: hidden;
+        min-width: 0;
+        max-width: 100%;
+        display: block;
+        transition: max-width 0.3s ease, padding-right 0.3s ease;
     }
 
     &__card-title {
         font-size: 18px;
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &__card-desc {
         font-size: 15px;
         margin: 5px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     &__card-price {
-        font-size: 16px;
         font-weight: bold;
         margin-left: 15px;
         white-space: nowrap;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    &__check {
+        background-color: $tertiary-color;
+        width: 59px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+
+        i {
+        background-color: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: $tertiary-color;
+        }
+    }
+
+    &-checkbox:checked ~ &-text {
+            max-width: calc(100% - 74px)
+    }
+
+    &__btn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        width: 60%;
+        font-weight: bold;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        background: linear-gradient(170deg, $main-color-mixed, $main-color);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        margin-top: 40px;
+        padding: 15px 40px;
+        cursor: pointer;
+        transition: background-color 0.5s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            background-color: linear-gradient(170deg, $main-color-mixed-light, $main-color-light);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.40);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        &:hover::after {
+            opacity: 0.1;
+        }
     }
 }
-
-.order-button {
-    margin-top: 40px;
-    padding: 15px 40px;
-    background: linear-gradient(170deg, mix($main-color, $secondary-color, 25%),$main-color);
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-}
-
 
 .footer {
     background-color: $dark-grey;
@@ -199,6 +287,18 @@ img {
     &__icone {
         width: 20px;
     }
+}
+
+// Animations
+@keyframes slide-in-left {
+    from {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 
