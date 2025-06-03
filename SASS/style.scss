@@ -1,6 +1,4 @@
 @import 'variable';
-@import 'mixin';
-
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +14,10 @@ body {
 
 img {
     width: 100%;
+    display: block;
+}
+
+label {
     display: block;
 }
 
@@ -65,7 +67,7 @@ img {
     @keyframes moveFork {
         to {
             right: 58%;
-            transform: translateX(-130%, -50%);
+            transform: translatex(-130%, -50%);
             opacity: 1;
         }
     }
@@ -156,25 +158,31 @@ img {
     text-align: center;
     background-color: $light-grey;
     padding: 0 20px;
-    max-width: 400px;
     margin: auto;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+        gap: 30px;
+    }
 
     &__title {
         font-size: 24px;
         width: 63%;
-        margin: 50px auto 30px;
+        margin: 0 auto;
     }
 
     &__subtitle {
         font-size: 18px;
-        margin-bottom: 30px;
-        font-weight: bold;
     }
 
     &__btn {
         position: relative;
         overflow: hidden;
-        width: 60%;
+        width: 218px;
         font-weight: bold;
         color: white;
         border: none;
@@ -182,7 +190,6 @@ img {
         height: 50px;
         background: linear-gradient(170deg, $main-color-mixed, $main-color);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        margin-bottom: 50px;
         cursor: pointer;
         transition: background-color 0.5s ease, box-shadow 0.3s ease;
 
@@ -212,15 +219,34 @@ img {
 
 .fonction {
     background-color: white;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 25px;
     height: 440px;
     justify-content: center;
 
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px 0;
+        gap: 30px;
+        width: auto;
+    }
+
     &__title {
         font-size: 24px;
+        padding-left: 45px;
+
+    }
+
+    &__steps {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        padding: 0 45px;
+        gap: 20px;
     }
 
     &__btn {
@@ -228,11 +254,12 @@ img {
         align-items: center;
         justify-content: flex-start;
         gap: 20px;
+        width: 100%;
         height: 72px;
         background-color: $light-grey;
         border: none;
         border-radius: 20px;
-        padding: 20px 20px 20px 45px;
+        padding: 20px 20px 20px 30px;
         font-weight: bold;
         position: relative;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -256,7 +283,9 @@ img {
         }
 
         &-label {
-            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         i {
@@ -292,12 +321,23 @@ img {
 }
 
 .restaurant-card {
-    text-decoration: none;
-    color: inherit;
+    position: relative;
+
+    &__link {
+        position: relative;
+        z-index: 1;
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+    }
         
     &__container {
+        position: relative;
         background-color: white;
+        height: 100%;
         border-radius: 20px;
+        transition: transform 0.3s ease;
     }
 
     &__img-wrapper {
@@ -359,11 +399,59 @@ img {
     &__location {
         font-weight: 300;
     }
-    
+
     &__like-icon {
-        @include heart-toggle;
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        z-index: 10;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        display: inline-block;
+
+        input {
+            display: none;
+        }
+
+        i {
+            font-size: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .fa-regular {
+            z-index: 2;
+            color: #000;
+            opacity: 1;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+        }
+
+        .fa-solid {
+            z-index: 1;
+            color: $main-color;
+            clip-path: inset(100% 0 0 0);
+            opacity: 1;
+            transition: clip-path 0.3s ease;
+        }
+
+        input:checked ~ .fa-regular {
+            opacity: 0;
+            transform: none;
+        }
+
+        input:checked ~ .fa-solid {
+            clip-path: inset(0 0 0 0);
+        }
+
+        input:not(:checked) ~ .fa-solid {
+            clip-path: inset(100% 0 0 0);
+        }
     }
 }
+
 
 .footer {
     background-color: $dark-grey;
@@ -400,5 +488,106 @@ img {
 
     &__icone {
         width: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    main {
+        max-width: 1440px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        height: 239px;
+        padding: 30px 0;
+
+        &__container {
+            margin: 0 auto;
+            height: 179px;
+            width: 645px;
+            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__title {
+            margin: 0 auto;
+            margin-bottom: 0;
+        }
+
+        &__btn {
+            margin: 0 auto;
+            width: 218px;
+            height: 50px;
+        }
+    }
+
+    .fonction {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0;
+        height: 230px;
+        padding: 25px 0;
+
+        &__container {
+            margin: 0 auto;
+        }
+
+        &__title {
+            margin: 0;
+            width: auto;
+        }
+    
+        &__steps {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 0 20px;
+            width: 1024px;
+        }
+
+        &__btn {
+            flex: none;
+            width: calc((100% - 50px) / 3);
+            max-width: 335px;
+        }
+    }
+
+    .restaurants {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;
+
+        &__content {
+            width: 1024px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px 100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-right: 20px;
+        }
     }
 }

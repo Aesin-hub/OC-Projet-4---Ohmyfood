@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./SASS/style_restaurants/style_restaurants.css">
 </head>
 <body class="restaurant-page">
@@ -28,126 +28,146 @@
             <div class="restaurant-menu__header">
                 <h1 class="restaurant-menu__title">Le délice des sens</h1>
                 <label class="restaurant-menu__like-icone">
-                    <input type="checkbox" hidden>
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-solid fa-heart"></i>
+                    <span class="restaurant-menu__heart-toggle-wrapper">
+                        <input type="checkbox" hidden>
+                        <i class="fa-regular fa-heart"></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
                 </label>
             </div>
 
             <div class="restaurant-menu__category">
                 <h2 class="restaurant-menu__category-title">Entrées</h2>
                 <div class="restaurant-menu__items">
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Tartare de thon</h3>
-                            <p class="restaurant-menu__card-desc">Assaisonné au yuzu</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">25€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Bouchée de homard croustillant</h3>
-                            <p class="restaurant-menu__card-desc">Et sa farandole de petits légumes</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">35€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Velouté de cèpes </h3>
-                            <p class="restaurant-menu__card-desc">Aux truffes</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">20€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="entree-1" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="entree-1" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Tartare de thon</span>
+                                <span class="restaurant-menu__card-desc">Assaisonné au yuzu</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">25€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="entree-2" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="entree-2" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Bouchée de homard croustillant</span>
+                                <span class="restaurant-menu__card-desc">Et sa farandole de petits légumes</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">35€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="entree-3" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="entree-3" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Velouté de cèpes </span>
+                                <span class="restaurant-menu__card-desc">Aux truffes</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">20€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
             <div class="restaurant-menu__category">
                 <h2 class="restaurant-menu__category-title">Plats</h2>
                 <div class="restaurant-menu__items">
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Poulet rôti aux herbes de Provence </h3>
-                            <p class="restaurant-menu__card-desc">Et sa crème de truffe</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">40€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Langouste rôtie </h3>
-                            <p class="restaurant-menu__card-desc">Et ses légumes de saison</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">35€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Côte de bœuf Angus</h3>
-                            <p class="restaurant-menu__card-desc">Et sa purée de panais</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">44€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="plat-1" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="plat-1" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Poulet rôti aux herbes de Provence </span>
+                                <span class="restaurant-menu__card-desc">Et sa crème de truffe</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">40€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="plat-2" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="plat-2" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Langouste rôtie </span>
+                                <span class="restaurant-menu__card-desc">Et ses légumes de saison</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">35€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="plat-3" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="plat-3" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Côte de bœuf Angus</span>
+                                <span class="restaurant-menu__card-desc">Et sa purée de panais</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">44€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
             <div class="restaurant-menu__category">
                 <h2 class="restaurant-menu__category-title">Desserts</h2>
                 <div class="restaurant-menu__items">
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Farandole de desserts</h3>
-                            <p class="restaurant-menu__card-desc">Du chef</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">18€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Crème brulée</h3>
-                            <p class="restaurant-menu__card-desc">Revisitée</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">22€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
-                    <label class="restaurant-menu__card">
-                        <input type="checkbox" class="restaurant-menu__card-checkbox" hidden>
-                        <div class="restaurant-menu__card-text">
-                            <h3 class="restaurant-menu__card-title">Tiramisu </h3>
-                            <p class="restaurant-menu__card-desc">À la noisette</p>
-                        </div>
-                        <div class="restaurant-menu__card-price">23€</div>
-                        <div class="restaurant-menu__check">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </label>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="dessert-1" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="dessert-1" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Farandole de desserts</span>
+                                <span class="restaurant-menu__card-desc">Du chef</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">18€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="dessert-2" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="dessert-2" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Crème brulée</span>
+                                <span class="restaurant-menu__card-desc">Revisitée</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">22€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="restaurant-menu__card">
+                        <input type="checkbox" id="dessert-3" class="restaurant-menu__card-checkbox" hidden>
+                        <label for="dessert-3" class="restaurant-menu__card-label">
+                            <span class="restaurant-menu__card-text">
+                                <span class="restaurant-menu__card-title">Tiramisu </span>
+                                <span class="restaurant-menu__card-desc">À la noisette</span>
+                            </span>
+                            <span class="restaurant-menu__card-price">23€</span>
+                            <span class="restaurant-menu__check">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
