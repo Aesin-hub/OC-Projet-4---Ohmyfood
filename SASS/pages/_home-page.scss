@@ -1,0 +1,413 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+body.home-page {
+
+    label {
+        display: block;
+    }
+
+    .hero {
+        text-align: center;
+        background-color: $light-grey;
+        padding: 0 20px;
+        margin: auto;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px 0;
+            gap: 30px;
+        }
+
+        &__title {
+            font-size: 24px;
+            width: 63%;
+            margin: 0 auto;
+        }
+
+        &__subtitle {
+            font-size: 18px;
+        }
+
+        &__btn {
+            position: relative;
+            overflow: hidden;
+            width: 218px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            height: 50px;
+            background: linear-gradient(170deg, $main-color-mixed, $main-color);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            transition: background-color 0.5s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                background-color: linear-gradient(170deg, $main-color-mixed-light, $main-color-light);
+                box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.40);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: white;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                pointer-events: none;
+            }
+
+            &:hover::after {
+                opacity: 0.1;
+            }
+        }
+    }
+
+    .fonction {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        height: 440px;
+        justify-content: center;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 30px;
+            width: auto;
+        }
+
+        &__title {
+            font-size: 24px;
+            padding-left: 45px;
+
+        }
+
+        &__steps {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            padding: 0 45px;
+            gap: 20px;
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            width: 100%;
+            height: 72px;
+            background-color: $light-grey;
+            border: none;
+            border-radius: 20px;
+            padding: 20px 20px 20px 30px;
+            font-weight: bold;
+            position: relative;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+            &-number {
+                position: absolute;
+                left: -12px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $main-color;
+                color: white;
+                font-size: 14px;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &-label {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            i {
+            color: $dark-grey;
+            font-size: 18px;
+            }
+
+            &:last-of-type i {
+            color: $main-color;
+            }   
+            
+            &:hover {
+                background-color: lighten($light-grey, 10%);
+                box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.40);
+            }
+        }
+    }
+
+    .restaurants {
+        padding: 30px 20px;
+        background-color: $light-grey;
+
+        &__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .restaurant-card {
+        position: relative;
+
+        &__link {
+            position: relative;
+            z-index: 1;
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+            
+        &__container {
+            position: relative;
+            background-color: white;
+            height: 100%;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        &__img-wrapper {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+            &--bottom {
+                object-position: bottom center;
+            }
+
+            &--top {
+                object-position: top center;
+            }
+
+            &--center {
+                object-position: center center;
+            }
+        }
+
+        &__badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: $tertiary-color;
+            color: #008766;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 3px;
+        }
+        
+        &__content {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        &__location {
+            font-weight: 300;
+        }
+
+        &__like-icon {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            z-index: 10;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: inline-block;
+
+            input {
+                display: none;
+            }
+
+            i {
+                font-size: 24px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: all 0.3s ease;
+            }
+
+            .fa-regular {
+                z-index: 2;
+                color: #000;
+                opacity: 1;
+                transition: opacity 0.3s ease, transform 0.2s ease;
+            }
+
+            .fa-solid {
+                z-index: 1;
+                color: $main-color;
+                clip-path: inset(100% 0 0 0);
+                opacity: 1;
+                transition: clip-path 0.3s ease;
+            }
+
+            input:checked ~ .fa-regular {
+                opacity: 0;
+                transform: none;
+            }
+
+            input:checked ~ .fa-solid {
+                clip-path: inset(0 0 0 0);
+            }
+
+            input:not(:checked) ~ .fa-solid {
+                clip-path: inset(100% 0 0 0);
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        main {
+            max-width: 3440px;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            height: 239px;
+            padding: 30px 0;
+
+            &__container {
+                margin: 0 auto;
+                height: 179px;
+                width: 645px;
+                gap: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &__title {
+                margin: 0 auto;
+                margin-bottom: 0;
+            }
+
+            &__btn {
+                margin: 0 auto;
+                width: 218px;
+                height: 50px;
+            }
+        }
+
+        .fonction {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin: 0;
+            height: 230px;
+            padding: 25px 0;
+
+            &__container {
+                margin: 0 auto;
+            }
+
+            &__title {
+                margin: 0;
+                width: auto;
+            }
+        
+            &__steps {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 20px;
+                padding: 0 20px;
+                width: 1024px;
+            }
+
+            &__btn {
+                flex: none;
+                width: calc((100% - 50px) / 3);
+                max-width: 335px;
+            }
+        }
+
+        .restaurants {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+
+            &__content {
+                width: 1024px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 100px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .restaurants {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+
+            &__content {
+                width: 1024px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin: 0 auto;
+                padding: 0 20px;
+                max-width: 100%;
+            }
+        }
+    }
+}
